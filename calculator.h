@@ -15,20 +15,20 @@ public:
         ~calculator();
 
         private slots:
-        void digitClicked();
-        void equalClicked();
-        void lateradderOperatorClicked();
-        void latermulOperatorClicked();
-        void pointClicked();
-        void change();
-        void DELClicked();
-        void clearALL();
-        void unaryfunction();
-        void Adsclicked();
-        void MCclicked();
-        void MRclicked();
-        void Maddclicked();
-        void Msubclicked();
+        void digitClicked();         //点击数字输出
+		void equalClicked();		//点击等于号输出
+        void lateradderOperatorClicked();   //点击后添加加减操作
+        void latermulOperatorClicked();     //点击后添加乘除操作
+        void pointClicked();          //点击后添加小数点操作
+        void change();         //改变正负号
+        void DELClicked();      //删除一位内容
+        void clearALL();      //清零
+        void unaryfunction();      //代数函数运算
+        void Adsclicked();      //取绝对值运算
+        void MCclicked();     //memory clean
+        void MRclicked();    //memory read
+        void Maddclicked();    //memory add
+        void Msubclicked();     //memory subtraction
         //    void sinOperatorClicked();
         //    void arcsinOperatorClicked();
         //    void cosOperatorClicked();
@@ -47,19 +47,19 @@ public:
 private:
         Ui::calculator *ui;
 
-        double getPi();
-        void abortOperation();
-        bool Calculate(double rightOperand, const QString &pendingOperator);
+        double getPi();   //返回pi值
+        void abortOperation();    //报错函数
+        bool Calculate(double rightOperand, const QString &pendingOperator);   //执行计算操作的函数
 
-        double SumSoFar;
-        double FactorSoFar;
-        double sumInMemory;
+        double SumSoFar;    //加法累计
+        double FactorSoFar;    //乘法累计
+        double sumInMemory;   //存储变量
         const double pi = 3.14159265358979;
 
-        QString pendingAdditiveOperator;
-        QString pendingMultiplicativeOperator;
+        QString pendingAdditiveOperator;   //加减类运算符
+        QString pendingMultiplicativeOperator;  //乘除类运算符
 
-        bool waitingForOperand;
+        bool waitingForOperand;  //是否在等待输入下一个操作数
 
 };
 
